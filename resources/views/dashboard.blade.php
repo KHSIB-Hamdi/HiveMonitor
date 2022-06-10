@@ -52,13 +52,13 @@
                             </div>
                             <div class="col">
                                 <ul class="nav nav-pills justify-content-end">
-                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sound" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="Kg">
+                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-exttemp" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="°C">
                                         <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
                                             <span class="d-none d-md-block">Month</span>
                                             <span class="d-md-none">M</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" data-toggle="chart" data-target="#chart-sound" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="Kg">
+                                    <li class="nav-item" data-toggle="chart" data-target="#chart-exttemp" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="°C">
                                         <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
                                             <span class="d-none d-md-block">Week</span>
                                             <span class="d-md-none">W</span>
@@ -72,7 +72,7 @@
                         <!-- Chart -->
                         <div class="chart">
                             <!-- Chart wrapper -->
-                            <canvas id="chart-sales" class="chart-canvas"></canvas>
+                            <canvas id="chart-exttemp" class="chart-canvas"></canvas>
                         </div>
                     </div>
                 </div>
@@ -87,13 +87,13 @@
                             </div>
                             <div class="col">
                                 <ul class="nav nav-pills justify-content-end">
-                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="°C">
+                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-hum" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="%rh">
                                         <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
                                             <span class="d-none d-md-block">Month</span>
                                             <span class="d-md-none">M</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" data-toggle="chart" data-target="#chart-hum" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="°C">
+                                    <li class="nav-item" data-toggle="chart" data-target="#chart-hum" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="%rh">
                                         <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
                                             <span class="d-none d-md-block">Week</span>
                                             <span class="d-md-none">W</span>
@@ -126,13 +126,13 @@
                             </div>
                             <div class="col">
                                 <ul class="nav nav-pills justify-content-end">
-                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sound" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="Kg">
+                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-press" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="Pa">
                                         <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
                                             <span class="d-none d-md-block">Month</span>
                                             <span class="d-md-none">M</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="Kg">
+                                    <li class="nav-item" data-toggle="chart" data-target="#chart-press" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="Pa">
                                         <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
                                             <span class="d-none d-md-block">Week</span>
                                             <span class="d-md-none">W</span>
@@ -146,7 +146,7 @@
                         <!-- Chart -->
                         <div class="chart">
                             <!-- Chart wrapper -->
-                            <canvas id="chart-sales" class="chart-canvas"></canvas>
+                            <canvas id="chart-press" class="chart-canvas"></canvas>
                         </div>
                     </div>
                 </div>
@@ -163,13 +163,13 @@
                             </div>
                             <div class="col">
                                 <ul class="nav nav-pills justify-content-end">
-                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sales" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="°C">
+                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-weight" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="Kg">
                                         <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
                                             <span class="d-none d-md-block">Month</span>
                                             <span class="d-md-none">M</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" data-toggle="chart" data-target="#chart-weight" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="°C">
+                                    <li class="nav-item" data-toggle="chart" data-target="#chart-weight" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="Kg">
                                         <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
                                             <span class="d-none d-md-block">Week</span>
                                             <span class="d-md-none">W</span>
@@ -198,13 +198,13 @@
                             </div>
                             <div class="col">
                                 <ul class="nav nav-pills justify-content-end">
-                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-sound" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="Kg">
+                                    <li class="nav-item mr-2 mr-md-0" data-toggle="chart" data-target="#chart-audio" data-update='{"data":{"datasets":[{"data":[0, 20, 10, 30, 15, 40, 20, 60, 60]}]}}' data-suffix="dB">
                                         <a href="#" class="nav-link py-2 px-3 active" data-toggle="tab">
                                             <span class="d-none d-md-block">Month</span>
                                             <span class="d-md-none">M</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" data-toggle="chart" data-target="#chart-sound" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="Kg">
+                                    <li class="nav-item" data-toggle="chart" data-target="#chart-audio" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="dB">
                                         <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
                                             <span class="d-none d-md-block">Week</span>
                                             <span class="d-md-none">W</span>
@@ -218,7 +218,7 @@
                         <!-- Chart -->
                         <div class="chart">
                             <!-- Chart wrapper -->
-                            <canvas id="chart-sound" class="chart-canvas"></canvas>
+                            <canvas id="chart-audio" class="chart-canvas"></canvas>
                         </div>
                     </div>
                 </div>

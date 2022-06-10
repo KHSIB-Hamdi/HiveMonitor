@@ -1206,18 +1206,18 @@ var WeightChart = (function() {
 
 })();
 
-var SoundChart = (function() {
+var AudioChart = (function() {
 
 	// Variables
 
-	var $chart = $('#chart-sound');
+	var $chart = $('#chart-audio');
 
 
 	// Methods
 
 	function init($chart) {
 
-		var soundChart = new Chart($chart, {
+		var AudioChart = new Chart($chart, {
 			type: 'line',
 			options: {
 				scales: {
@@ -1263,7 +1263,147 @@ var SoundChart = (function() {
 
 		// Save to jQuery object
 
-		$chart.data('chart', soundChart);
+		$chart.data('chart', AudioChart);
+
+	};
+
+
+	// Events
+
+	if ($chart.length) {
+		init($chart);
+	}
+
+})();
+
+var PressureChart = (function() {
+
+	// Variables
+
+	var $chart = $('#chart-press');
+
+
+	// Methods
+
+	function init($chart) {
+
+		var PressureChart = new Chart($chart, {
+			type: 'line',
+			options: {
+				scales: {
+					yAxes: [{
+						gridLines: {
+							color: Charts.colors.gray[900],
+							zeroLineColor: Charts.colors.gray[900]
+						},
+						ticks: {
+							callback: function(value) {
+								if (!(value % 10)) {
+									return value + 'Pa';
+								}
+							}
+						}
+					}]
+				},
+				tooltips: {
+					callbacks: {
+						label: function(item, data) {
+							var label = data.datasets[item.datasetIndex].label || '';
+							var yLabel = item.yLabel;
+							var content = '';
+
+							if (data.datasets.length > 1) {
+								content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+							}
+
+							content += '<span class="popover-body-value">' + yLabel + 'Pa </span>';
+							return content;
+						}
+					}
+				}
+			},
+			data: {
+				labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				datasets: [{
+					label: 'Performance',
+					data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+				}]
+			}
+		});
+
+		// Save to jQuery object
+
+		$chart.data('chart', PressureChart);
+
+	};
+
+
+	// Events
+
+	if ($chart.length) {
+		init($chart);
+	}
+
+})();
+
+var ExttempChart = (function() {
+
+	// Variables
+
+	var $chart = $('#chart-exttemp');
+
+
+	// Methods
+
+	function init($chart) {
+
+		var ExttempChart = new Chart($chart, {
+			type: 'line',
+			options: {
+				scales: {
+					yAxes: [{
+						gridLines: {
+							color: Charts.colors.gray[900],
+							zeroLineColor: Charts.colors.gray[900]
+						},
+						ticks: {
+							callback: function(value) {
+								if (!(value % 10)) {
+									return value + '°C';
+								}
+							}
+						}
+					}]
+				},
+				tooltips: {
+					callbacks: {
+						label: function(item, data) {
+							var label = data.datasets[item.datasetIndex].label || '';
+							var yLabel = item.yLabel;
+							var content = '';
+
+							if (data.datasets.length > 1) {
+								content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+							}
+
+							content += '<span class="popover-body-value">' + yLabel + '°C </span>';
+							return content;
+						}
+					}
+				}
+			},
+			data: {
+				labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				datasets: [{
+					label: 'Performance',
+					data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
+				}]
+			}
+		});
+
+		// Save to jQuery object
+
+		$chart.data('chart', ExttempChart);
 
 	};
 
