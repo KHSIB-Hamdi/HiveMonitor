@@ -191,7 +191,7 @@
                                             <span class="d-md-none">M</span>
                                         </a>
                                     </li>
-                                    <li class="nav-item" data-toggle="chart" data-target="#chart-weigh" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="Kg">
+                                    <li class="nav-item" data-toggle="chart" data-target="#chart-weight" data-update='{"data":{"datasets":[{"data":[0, 20, 5, 25, 10, 30, 15, 40, 40]}]}}' data-suffix="Kg">
                                         <a href="#" class="nav-link py-2 px-3" data-toggle="tab">
                                             <span class="d-none d-md-block">Week</span>
                                             <span class="d-md-none">W</span>
@@ -205,7 +205,7 @@
                         <!-- Chart -->
                         <div class="chart">
                             <!-- Chart wrapper -->
-                            <canvas id="chart-weigh" class="chart-canvas"></canvas>
+                            <canvas id="chart-weight" class="chart-canvas"></canvas>
                         </div>
                     </div>
                 </div>
