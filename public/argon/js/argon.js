@@ -1186,7 +1186,7 @@ var WeightChart = (function() {
 				labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 				datasets: [{
 					label: 'Performance',
-					data: [100, 120, 140, 180, 200, 230, 250, 300, 310]
+					data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
 				}]
 			}
 		});
@@ -1256,7 +1256,7 @@ var AudioChart = (function() {
 				labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 				datasets: [{
 					label: 'Performance',
-					data: [3, 5, 6, 7, 10, 20, 25, 30, 40]
+					data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
 				}]
 			}
 		});
