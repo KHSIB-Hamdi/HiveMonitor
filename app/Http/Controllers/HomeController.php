@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,9 @@ class HomeController extends Controller
     public function index()
     {
         $data = User::all();
-        return view('dashboard', compact('data'));
+        $tasks = DB::select('select * from tasks');
+       
+        return view('dashboard', compact('data','tasks'));
     }
     public function viewUserSave(Request $request){
 
@@ -51,5 +54,10 @@ class HomeController extends Controller
  
         }
  
+    }
+    public function display(){
+
+        
+        
     }
 }

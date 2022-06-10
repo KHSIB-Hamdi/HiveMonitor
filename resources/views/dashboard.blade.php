@@ -287,10 +287,9 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th scope="row">
-                                    Honey Harvest
-                                    </th>
-                                    
+                                @foreach($tasks as $row)
+                              <tr>
+					              	<td>{{ $row->name }}</td>
                                     <td>
                                         <div class="d-flex align-items-center">
                                             <span class="mr-2">60%</span>
@@ -301,71 +300,8 @@
                                             </div>
                                         </div>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                    Disease Check
-                                    </th>
-                                    
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">70%</span>
-                                            <div>
-                                                <div class="progress">
-                                                <div class="progress-bar bg-gradient-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                    Bee Feeding
-                                    </th>
-                                    
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">80%</span>
-                                            <div>
-                                                <div class="progress">
-                                                <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                    Hive inspection
-                                    </th>
-                                    
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">75%</span>
-                                            <div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                    Hive Check
-                                    </th>
-                                   
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">30%</span>
-                                            <div>
-                                                <div class="progress">
-                                                <div class="progress-bar bg-gradient-warning" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+					          </tr>
+					            @endforeach
                             </tbody>
                         </table>
                     </div>
