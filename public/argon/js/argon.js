@@ -995,18 +995,18 @@ var OrdersChart = (function() {
 // Sales chart
 //
 
-var SalesChart = (function() {
+var TemperatureChart = (function() {
 
 	// Variables
 
-	var $chart = $('#chart-sales');
+	var $chart = $('#chart-temp');
 
 
 	// Methods
 
 	function init($chart) {
 
-		var salesChart = new Chart($chart, {
+		var TemperatureChart = new Chart($chart, {
 			type: 'line',
 			options: {
 				scales: {
@@ -1052,7 +1052,7 @@ var SalesChart = (function() {
 
 		// Save to jQuery object
 
-		$chart.data('chart', salesChart);
+		$chart.data('chart', TemperatureChart);
 
 	};
 
