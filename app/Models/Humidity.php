@@ -9,6 +9,10 @@ class Humidity extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'humidity', 'symbol'
+        'humidity', 'symbol','beehive'
     ];
+    public function beehive()
+    {
+       return $this->belongsTo(Beehive::class);
+    }
 }

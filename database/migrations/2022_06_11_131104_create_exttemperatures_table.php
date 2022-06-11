@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSitesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateSitesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sites', function (Blueprint $table) {
-            $table->id();
-            $table->float('longitude');
-            $table->float('latitude');
+        Schema::create('exttemperatures', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('exttemperature');
+            $table->string('symbol')->default('none');
+            $table->UnsignedBigInteger('beehive');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateSitesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sites');
+        Schema::dropIfExists('exttemperatures');
     }
-}
+};

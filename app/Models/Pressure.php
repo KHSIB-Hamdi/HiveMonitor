@@ -5,10 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hive extends Model
+class Pressure extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'internal_temperature', 'external_temperature', 'humidity', 'weight'
+        'pressure', 'symbol','beehive'
     ];
+    public function beehive()
+    {
+       return $this->belongsTo(Beehive::class);
+    }
 }

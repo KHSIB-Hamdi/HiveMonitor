@@ -12,6 +12,8 @@ use App\Http\Controllers\DimensionController;
 use App\Http\Controllers\StateController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\HiveController;
+use App\Http\Controllers\PressureController;
+use App\Http\Controllers\ExttemperatureController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,8 +37,6 @@ Route::post('register', [ApiController::class, 'register']);
 Route::get('/temperature', [TemperatureController::class,'index']);
 Route::post('/temperature', [TemperatureController::class,'store']);
 
-Route::post('/hive', [HiveController::class,'store']);
-
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('user', [ApiController::class, 'getAuthenticatedUser']);
     Route::get('logout', [ApiController::class, 'logout']);
@@ -46,6 +46,10 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('/humidity', [HumidityController::class,'store']);
     Route::get('/weight', [WeightController::class,'index']);
     Route::post('/weight', [WeightController::class,'store']);
+    Route::get('/pressure', [PressureController::class,'index']);
+    Route::post('/pressure', [PressureController::class,'store']);
+    Route::get('/exttemperature', [ExttemperatureController::class,'index']);
+    Route::post('/exttemperature', [ExttemperatureController::class,'store']);
     Route::get('/sound', [SoundController::class,'index']);
     Route::post('/sound', [SoundController::class,'store']);
 });    

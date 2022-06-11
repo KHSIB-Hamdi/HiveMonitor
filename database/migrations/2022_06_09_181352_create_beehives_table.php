@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('type');
-            $table->string('apiary');
+            $table->UnsignedBigInteger('apiary');
             $table->string('status');
             $table->timestamps();
+            $table->foreign('apiary')->references('id')->on('apiaries');
         });
     }
 

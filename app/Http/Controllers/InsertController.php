@@ -13,10 +13,10 @@ class InsertController extends Controller
 
     function add(Request $request){
         $request->validate([
-            'name'=>'required',
-            'type'=>'required',
-            'apiary'=>'required',
-            'status'=>'required'
+            'name'=>'required|string|max:255',
+            'type'=>'required|string|max:255',
+            'apiary'=>'required|integer|max:255',
+            'status'=>'required|string|max:255'
         ]);
 
         $query = DB::table('beehives')->insert([

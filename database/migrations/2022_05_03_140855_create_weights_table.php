@@ -17,8 +17,8 @@ class CreateWeightsTable extends Migration
             $table->bigIncrements('id');
             $table->string('weight');
             $table->string('symbol')->default('none');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at'); 
+            $table->UnsignedBigInteger('beehive');
+            $table->timestamps();
         });
     }
 

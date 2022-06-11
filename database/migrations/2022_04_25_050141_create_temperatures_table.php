@@ -18,8 +18,8 @@ class CreateTemperaturesTable extends Migration
             $table->bigIncrements('id');
             $table->string('temperature');
             $table->string('symbol')->default('none');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at'); 
+            $table->timestamps(); 
+            
         });
     }
 

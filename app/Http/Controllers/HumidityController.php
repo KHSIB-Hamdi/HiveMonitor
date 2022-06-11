@@ -21,10 +21,11 @@ class HumidityController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->only('humidity', 'symbol' );
+        $data = $request->only('humidity', 'symbol', 'beehive' );
         $validator = Validator::make($data, [
             'humidity' => 'required',
-            'symbol' => 'required'
+            'symbol' => 'required',
+            'beehive' => 'required'
          
         
         ]);
@@ -34,6 +35,7 @@ class HumidityController extends Controller
         }
       
         Humidity::create($request->all());
+        return "humidity created successfully";
     }
 
     public function show($id)

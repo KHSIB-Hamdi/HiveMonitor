@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('hives', function (Blueprint $table) {
-            $table->id();
-            $table->string('internal_temperature');
-            $table->string('external_temperature');
-            $table->string('humidity');
+        Schema::create('pressures', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('pressure');
-            $table->string('weight');
+            $table->string('symbol')->default('none');
+            $table->UnsignedBigInteger('beehive');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hives');
+        Schema::dropIfExists('pressures');
     }
 };

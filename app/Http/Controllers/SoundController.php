@@ -21,11 +21,11 @@ class SoundController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->only('sound', 'symbol' );
+        $data = $request->only('sound', 'symbol', 'beehive' );
         $validator = Validator::make($data, [
             'sound' => 'required',
-            'symbol' => 'required'
-        
+            'symbol' => 'required',
+            'beehive' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -33,6 +33,7 @@ class SoundController extends Controller
         }
 
         Sound::create($request->all());
+        return "audio created successfully";
     }
 
     public function show($id)

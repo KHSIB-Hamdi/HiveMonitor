@@ -3,52 +3,56 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Inspections;
+use App\Models\Inspection;
 use Illuminate\Support\Facades\DB;
 
 
-class InspectionsController extends Controller
+class InspectionController extends Controller
 {
     function index(){
-        return view('pages.inspections', $data);
+        return view('pages.addinspection');
     }
 
-    public function viewInspectionSave(Request $request){
-
-        $this->validate($request,[
-         'frames' => 'required|string|max:255',
-         'population' => 'required|string|max:255',
-         'honey' => 'required|string|max:255',
-         'egg' => 'required|string|max:255',
-         'varroa' => 'required|string|max:255',
-         'queen' => 'required|string|max:255',
+    function add(Request $request){
+        $request->validate([
+            'frames'=>'required',
+            'population'=>'required',
+            'honey'=>'required',
+            'egg'=>'required',
+            'varroa'=>'required',
+            'queen'=>'required'
         ]);
- 
-        try{
- 
-         $frames = $request->$frames;
-         $population = $request->$population;
-         $honey = $request->$honey;
-         $egg = $request->$egg;
-         $varroa = $request->$varroa;
-         $queen = $request->$queen;
 
- 
-         $inspection = new Inspections();
-         $inspection->frames = $frames;
-         $inspection->population = $population;
-         $inspection->honey = $honey;
-         $inspection->egg = $egg;
-         $inspection->varroa = $varroa;
-         $inspection->queen = $queen;
-         $inspection->save();
-         return redirect()->back()->with('insert', 'inspection has been inserted successfully');
+        $query = DB::table('inspections')->insert([
+            'frames'=>$request->input('frames'),
+            'population'=>$request->input('population'),
+            'honey'=>$request->input('honey'),
+            'egg'=>$request->input('egg'),
+            'varroa'=>$request->input('varroa'),
+            'queen'=>$request->input('queen'),
+        ]);
+
+        if($query){
+
+            return back()->with('success','new inspection has been added successfully');
         }
- 
-        catch(\Exception $e){
-         return redirect()->back()->with('error', 'inspection insert has failed!');
- 
+        else{
+            return back()->with('fail','something went wrong!');
         }
- 
+
+        
+    }
+
+    public function formview(){
+
+        return view('pages.inspections');
+
+    }
+
+    public function display(){
+
+        $inspection = DB::select('select * from inspections');
+        return view('pages.inspections', ['inspection'=>$inspection]);
+        
     }
 }

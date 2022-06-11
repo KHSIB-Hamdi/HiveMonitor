@@ -29,9 +29,9 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
 	Route::get('analytics', [App\Http\Controllers\ChartController::class, 'index'])->name('analytics');
-	Route::get('apiaries', [App\Http\Controllers\InsertApiary::class, 'display'])->name('apiaries');
-	Route::get('tasks', [App\Http\Controllers\InsertTask::class, 'display'])->name('tasks');
-	Route::get('inspections', [App\Http\Controllers\InsertInspection::class, 'display'])->name('inspections');
+	Route::get('apiaries', [App\Http\Controllers\ApiaryController::class, 'display'])->name('apiaries');
+	Route::get('tasks', [App\Http\Controllers\TaskController::class, 'display'])->name('tasks');
+	Route::get('inspections', [App\Http\Controllers\InspectionController::class, 'display'])->name('inspections');
 	Route::get('addhive', function () {return view('pages.addhive');})->name('addhive');
 	Route::get('adduser', function () {return view('pages.adduser');})->name('adduser');
 	Route::get('role', function () {return view('pages.role');})->name('role');
@@ -45,11 +45,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::post('addhive', [App\Http\Controllers\InsertController::class, 'add']);
 
-Route::post('addapiary', [App\Http\Controllers\InsertApiary::class, 'add']);
+Route::post('addapiary', [App\Http\Controllers\ApiaryController::class, 'add']);
 
-Route::post('addtask', [App\Http\Controllers\InsertTask::class, 'add']);
+Route::post('addtask', [App\Http\Controllers\TaskController::class, 'add']);
 
-Route::post('addinspection', [App\Http\Controllers\InsertInspection::class, 'add']);
+Route::post('addinspection', [App\Http\Controllers\InspectionController::class, 'add']);
 
 
 

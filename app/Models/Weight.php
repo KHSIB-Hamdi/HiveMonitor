@@ -9,6 +9,10 @@ class Weight extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'weight', 'symbol'
+        'weight', 'symbol','beehive'
     ];
+    public function beehive()
+    {
+       return $this->belongsTo(Beehive::class);
+    }
 }

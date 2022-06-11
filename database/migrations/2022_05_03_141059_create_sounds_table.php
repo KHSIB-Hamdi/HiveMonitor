@@ -15,10 +15,10 @@ class CreateSoundsTable extends Migration
     {
         Schema::create('sounds', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('sound');
+            $table->string('audiosample');
             $table->string('symbol')->default('none');
-            $table->dateTime('created_at');
-            $table->dateTime('updated_at'); 
+            $table->UnsignedBigInteger('beehive');
+            $table->timestamps();
         });
     }
 

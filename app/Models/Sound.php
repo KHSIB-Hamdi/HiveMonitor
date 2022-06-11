@@ -9,6 +9,10 @@ class Sound extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'sound', 'symbol'
+        'sound', 'symbol','beehive'
     ];
+    public function beehive()
+    {
+       return $this->belongsTo(Beehive::class);
+    }
 }

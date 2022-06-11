@@ -21,12 +21,11 @@ class WeightController extends Controller
 
     public function store(Request $request)
     {
-        $data = $request->only('weight', 'symbol' );
+        $data = $request->only('weight', 'symbol', 'beehive' );
         $validator = Validator::make($data, [
             'weight' => 'required',
-            'symbol' => 'required'
-           
-        
+            'symbol' => 'required',
+            'beehive' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -34,6 +33,7 @@ class WeightController extends Controller
         }
 
         Weight::create($request->all());
+        return "weight created successfully";
     }
 
     public function show($id)
