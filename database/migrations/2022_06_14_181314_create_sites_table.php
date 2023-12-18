@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSitesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -15,8 +15,14 @@ class CreateSitesTable extends Migration
     {
         Schema::create('sites', function (Blueprint $table) {
             $table->id();
-            $table->float('longitude');
-            $table->float('latitude');
+            $table->string('name')->unique();
+            $table->double('latitude')->nullable();
+            $table->double('longitude')->nullable();
+            $table->string('street')->nullable();
+            $table->string('street_number')->nullable();
+            $table->string('zip_code')->nullable();
+            $table->string('city')->nullable();
+            $table->foreignId('country_id')->constrained()->cascadeOnDelete()->nullable();        
             $table->timestamps();
         });
     }
@@ -30,4 +36,4 @@ class CreateSitesTable extends Migration
     {
         Schema::dropIfExists('sites');
     }
-}
+};

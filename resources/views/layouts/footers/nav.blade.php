@@ -1,8 +1,7 @@
 <div class="row align-items-center justify-content-xl-between">
     <div class="col-xl-6">
         <div class="copyright text-center text-xl-left text-muted">
-            &copy; {{ now()->year }} <a href="https://www.creative-tim.com" class="text-orange font-weight-bold ml-1" target="_blank">Hamdi KHSIB</a> &amp;
-            <a href="https://www.updivision.com" class="text-orange font-weight-bold ml-1" target="_blank">Idriss BEN MSADEK JEBAHI</a>
+            &copy; {{ now()->year }}  <a href="https://www.updivision.com" class="text-orange font-weight-bold ml-1" target="_blank">Castle Soft Sarl</a>
         </div>
     </div>
     <div class="col-xl-6">

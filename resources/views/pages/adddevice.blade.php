@@ -31,7 +31,7 @@
                 <div class="card-header border-0">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Hive Creation</h3>
+                            <h3 class="mb-0">Device Creation</h3>
                         </div>
                     </div>
                 </div>
@@ -42,34 +42,26 @@
                    <form action = "addhive" method = "post">
                        @csrf
                                 <div class="form-group mb-3">
-                                    <label class="form-control-label" for="input-name">{{ __('Identifier') }}</label>
-                                    <input type="text" name="identifier" id="input-name" class="name form-control " >
+                                    <label class="form-control-label" for="input-name">{{ __('Brand') }}</label>
+                                    <input type="text" name="brand" id="input-name" class="name form-control " >
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label class="form-control-label" for="input-name">{{ __('Site') }}</label>
-                                    <input type="text" name="site" id="input-name" class="name form-control " >
+                                    <label class="form-control-label" for="input-name">{{ __('Model') }}</label>
+                                    <input type="text" name="model" id="input-name" class="name form-control " >
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label class="form-control-label" for="input-name">{{ __('Type') }}</label>
-                                    <input type="text" name="beehive_type" id="input-name"  class="type form-control ">
+                                    <label class="form-control-label" for="input-name">{{ __('Serial Number') }}</label>
+                                    <input type="text" name="serial_number" id="input-name"  class="type form-control ">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label class="form-control-label" for="input-name">{{ __('Apiary') }}</label>
-                                    <input type="text" name="apiary" id="input-name"  class="apiary form-control ">
+                                    <label class="form-control-label" for="input-name">{{ __('Description') }}</label>
+                                    <input type="text" name="description" id="input-name"  class="apiary form-control ">
                                 </div>
                                 <div class="form-group mb-3">
-                                    <label class="form-control-label" for="input-name">{{ __('Status') }}</label>
-                                    <input type="text" name="beehive_status" id="input-name"  class="status form-control ">
+                                    <label class="form-control-label" for="input-name">{{ __('Beehive') }}</label>
+                                    <input type="text" name="beehive" id="input-name"  class="status form-control ">
                                 </div>
-                                
-                                <div class="form-group mb-3">
-                                    <label class="form-control-label" for="input-name">{{ __('Levels') }}</label>
-                                    <input type="text" name="beehive_levels" id="input-name"  class="status form-control ">
-                                </div>
-                                <div class="form-group mb-3">
-                                    <label class="form-control-label" for="input-name">{{ __('Frames') }}</label>
-                                    <input type="text" name="beehive_frames" id="input-name"  class="status form-control ">
-                                </div>
+                            
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Create') }}</button>
                                 </div>

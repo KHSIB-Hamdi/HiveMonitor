@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDimensionsTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateDimensionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('dimensions', function (Blueprint $table) {
+        Schema::create('devices', function (Blueprint $table) {
             $table->id();
-            $table->integer('length');
-            $table->integer('width');
+            $table->string('brand');
+            $table->string('model');
+            $table->string('serial_number')->unique();
+            $table->string('description')->nullable();
+            $table->foreignId('beehive_id')->constrained()->cascadeOnDelete()->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateDimensionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dimensions');
+        Schema::dropIfExists('devices');
     }
-}
+};

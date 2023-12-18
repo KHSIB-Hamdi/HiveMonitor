@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class ApiaryController extends Controller
 {
     function index(){
+
         return view('pages.addapiary');
     }
 
@@ -36,8 +37,23 @@ class ApiaryController extends Controller
     }
     public function display(){
 
+        $beehives = DB::select('select * from beehives');
         $apiaries = DB::select('select * from apiaries');
-        return view('pages.apiaries', ['apiaries'=>$apiaries]);
+        return view('pages.apiaries', ['apiaries'=>$apiaries,'beehives'=>$beehives ]);
         
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Beehive  $beehive
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Beehive $beehive)
+    {
+        $beehive->delete();
+        return response(['error' => 0, 'message' => 'beehive has been deleted']);
+    }
+
+   
 }

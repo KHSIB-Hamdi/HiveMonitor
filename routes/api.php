@@ -14,6 +14,7 @@ use App\Http\Controllers\TypeController;
 use App\Http\Controllers\HiveController;
 use App\Http\Controllers\PressureController;
 use App\Http\Controllers\ExttemperatureController;
+use App\Http\Controllers\MeasurementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,13 +35,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('login', [ApiController::class, 'authenticate']);
 Route::post('register', [ApiController::class, 'register']);
 
-Route::get('/temperature', [TemperatureController::class,'index']);
-Route::post('/temperature', [TemperatureController::class,'store']);
+
+Route::get('/measurement', [MeasurementController::class,'index']);
+Route::post('/measurement', [MeasurementController::class,'store']);
 
 Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('user', [ApiController::class, 'getAuthenticatedUser']);
     Route::get('logout', [ApiController::class, 'logout']);
-   
+    Route::get('/temperature', [TemperatureController::class,'index']);
+    Route::post('/temperature', [TemperatureController::class,'store']);
     Route::put('/temperature/{id}', [TemperatureController::class,'update']);
     Route::get('/humidity', [HumidityController::class,'index']);
     Route::post('/humidity', [HumidityController::class,'store']);

@@ -22,11 +22,10 @@ class TemperatureController extends Controller
     public function store(Request $request)
     {
        
-        $data = $request->only('temperature', 'symbol','beehive');
+        $data = $request->only('temperature', 'symbol');
         $validator = Validator::make($data, [
             'temperature' => 'required',
             'symbol' => 'required',
-            'beehive' => 'required'
         ]);
 
       

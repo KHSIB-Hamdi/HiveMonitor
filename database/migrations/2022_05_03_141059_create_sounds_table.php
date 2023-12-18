@@ -17,7 +17,7 @@ class CreateSoundsTable extends Migration
             $table->bigIncrements('id');
             $table->string('audiosample');
             $table->string('symbol')->default('none');
-            $table->UnsignedBigInteger('beehive');
+           
             $table->timestamps();
         });
     }

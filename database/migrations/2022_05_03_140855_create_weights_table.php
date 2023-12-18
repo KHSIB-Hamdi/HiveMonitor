@@ -17,7 +17,7 @@ class CreateWeightsTable extends Migration
             $table->bigIncrements('id');
             $table->string('weight');
             $table->string('symbol')->default('none');
-            $table->UnsignedBigInteger('beehive');
+            
             $table->timestamps();
         });
     }

@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Temperature extends Model
+class MeasurementUnit extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'temperature', 'symbol'
+        'name','unit','description'
     ];
-    
+    public function measurements(){
+        return $this->hasMany(Measurement::class);
+    }
 }

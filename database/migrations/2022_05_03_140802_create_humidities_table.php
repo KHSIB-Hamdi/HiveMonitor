@@ -17,7 +17,7 @@ class CreateHumiditiesTable extends Migration
             $table->bigIncrements('id');
             $table->string('humidity');
             $table->string('symbol')->default('none');
-            $table->UnsignedBigInteger('beehive');
+            
             $table->timestamps();
 
         });

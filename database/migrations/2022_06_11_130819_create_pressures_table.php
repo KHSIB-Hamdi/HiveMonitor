@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('pressure');
             $table->string('symbol')->default('none');
-            $table->UnsignedBigInteger('beehive');
+           
             $table->timestamps();
         });
     }

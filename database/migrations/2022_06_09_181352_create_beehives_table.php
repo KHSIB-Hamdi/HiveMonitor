@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('beehives', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('type');
+            $table->string('identifier')->unique();
+            $table->foreignId('site_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('beehive_type_id')->constrained()->cascadeOnDelete();
             $table->UnsignedBigInteger('apiary');
-            $table->string('status');
+            $table->foreignId('beehive_status_id')->constrained()->cascadeOnDelete();
+            $table->unsignedInteger('beehive_levels')->default(1);
+            $table->unsignedInteger('beehive_frames')->default(10);
             $table->timestamps();
             $table->foreign('apiary')->references('id')->on('apiaries');
         });

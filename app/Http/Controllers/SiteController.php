@@ -2,85 +2,106 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Site;
-use JWTAuth;
-use Tymon\JWTAuth\Exceptions\JWTException;
-use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    protected $user;
-    public function index(){
-        $sites = Site::all();
-        return response()->json($sites);
-        
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return $this->respondWithSuccess(Site::all());
     }
 
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-       
-        $data = $request->only('longitude', 'latitude','altitude' );
-        $validator = Validator::make($data, [
-            'longitude' => 'required',
+        $data = $request->validate([
+            'name' => 'required',
             'latitude' => 'required',
-            'altitude' => 'required'
+            'longitude' => 'required',
+            'street' => 'required',
+            'street_number' => 'required',
+            'zip_code' => 'required',
+            'city' => 'required',
+            'value' => 'required'
         ]);
 
-      
-        if ($validator->fails()) {
-            return response()->json(['error' => $validator->messages()], 200);
+        $existing = Site::where('name', $data['name'])->first();
+
+        if (!$existing) {
+            $site = Site::create([
+                'name' => $data['name'],
+                'latitude' => $data['latitude'],
+                'longitude' => $data['longitude'],
+                'street' => $data['street'],
+                'street_number' => $data['street_number'],
+                'zip_code' => $data['zip_code'] , 
+                'city' => $data['city'],
+                'country_id' => $data['country_id'], 
+            ]);
+            return $site;
         }
-
-        Site::create($request->all());
-        return "sites created successfully";
+        return response(['error' => 1, 'message' => 'site already exists'], 409);
     }
-  
-    public function edit(Site $site)
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Site  $site
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Site $site)
     {
-        //
+        return $this->respondWithSuccess($site);
     }
 
-    
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Site  $site
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, Site $site)
     {
-       
-        $data = $request->only('longitude', 'latitude','altitude');
-        $validator = Validator::make($data, [
-            'longitude' => 'required',
-            'latitude' => 'required',
-            'altitude' => 'required'
-        ]);
-
-        
-        if ($validator->fails()) {
-            return response()->json(['error' => $validator->messages()], 200);
+        if (!$site) {
+            return response(['error' => 1, 'message' => 'site doesn\'t exist'], 404);
         }
 
-        
-        $site = $site->update([
-            'longitude' => $request->longitude,
-            'latitude' => $request->latitude,
-            'altitude' => $request->altitude
-        ]);
+        $site->name = $request->name ?? $site->name;
+        $site->latitude = $request->latitude ?? $site->latitude;
+        $site->longitude = $request->longitude ?? $site->longitude;
+        $site->street = $request->street ?? $site->street;
+        $site->street_number = $request->street_number ?? $site->street_number;
+        $site->zip_code = $request->zip_code ?? $site->zip_code;
+        $site->city = $request->city ?? $site->city;
+        $site->country_id = $request->country_id ?? $site->country_id;
 
-        
-        return response()->json([
-            'success' => true,
-            'message' => 'sites data updated successfully',
-            'data' => $site
-        ], Response::HTTP_OK);
+        $site->update();
+
+        return $site;
     }
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Site  $site
+     * @return \Illuminate\Http\Response
+     */
     public function destroy(Site $site)
     {
         $site->delete();
-        
-        return response()->json([
-            'success' => true,
-            'message' => 'sites data deleted successfully'
-        ], Response::HTTP_OK);
+        return response(['error' => 0, 'message' => 'site has been deleted']);
     }
 }
+

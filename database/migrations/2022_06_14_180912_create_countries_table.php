@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('exttemperatures', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('exttemperature');
-            $table->string('symbol')->default('none');
-        
+        Schema::create('countries', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('country_code', 3)->unique();
+            $table->string('iso_code_2', 2)->unique();
+            $table->string('iso_code_3', 3)->unique();
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exttemperatures');
+        Schema::dropIfExists('countries');
     }
 };

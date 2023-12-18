@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('exttemperatures', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('exttemperature');
-            $table->string('symbol')->default('none');
-        
+        Schema::create('beehive_statuses', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('slug')->unique();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('exttemperatures');
+        Schema::dropIfExists('beehive_statuses');
     }
 };
