@@ -1,0 +1,57 @@
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\TemperatureController;
+use App\Http\Controllers\HumidityController;
+use App\Http\Controllers\WeightController;
+use App\Http\Controllers\SoundController;
+use App\Http\Controllers\SiteController;
+use App\Http\Controllers\PressureController;
+use App\Http\Controllers\ExttemperatureController;
+use App\Http\Controllers\MeasurementController;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+
+Route::post('login', [ApiController::class, 'authenticate']);
+Route::post('register', [ApiController::class, 'register']);
+
+
+Route::get('/measurement', [MeasurementController::class,'index']);
+Route::post('/measurement', [MeasurementController::class,'store']);
+
+Route::group(['middleware' => ['jwt.verify']], function() {
+    Route::get('user', [ApiController::class, 'getAuthenticatedUser']);
+    Route::get('logout', [ApiController::class, 'logout']);
+    Route::get('/temperature', [TemperatureController::class,'index']);
+    Route::post('/temperature', [TemperatureController::class,'store']);
+    Route::put('/temperature/{id}', [TemperatureController::class,'update']);
+    Route::get('/humidity', [HumidityController::class,'index']);
+    Route::post('/humidity', [HumidityController::class,'store']);
+    Route::get('/weight', [WeightController::class,'index']);
+    Route::post('/weight', [WeightController::class,'store']);
+    Route::get('/pressure', [PressureController::class,'index']);
+    Route::post('/pressure', [PressureController::class,'store']);
+    Route::get('/exttemperature', [ExttemperatureController::class,'index']);
+    Route::post('/exttemperature', [ExttemperatureController::class,'store']);
+    Route::get('/sound', [SoundController::class,'index']);
+    Route::post('/sound', [SoundController::class,'store']);
+});    
+
+Route::get('/site', [SiteController::class,'index']);
+Route::post('/site', [SiteController::class,'store']);
