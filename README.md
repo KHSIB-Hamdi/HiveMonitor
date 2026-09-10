@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/hivemonitor.png" alt="HiveMonitor" width="220">
+  <img src="docs/images/hivemonitor.png" alt="HiveMonitor" width="280">
 </p>
 
 <h1 align="center">HiveMonitor</h1>
@@ -11,23 +11,17 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Laravel-9.14-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel 9.14">
-  <img src="https://img.shields.io/badge/PHP-8.0%2B-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP 8.0+">
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
-  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Bootstrap-5.1-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap 5.1">
-  <img src="https://img.shields.io/badge/Chart.js-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white" alt="Chart.js">
-  <img src="https://img.shields.io/badge/Google%20Maps-4285F4?style=for-the-badge&logo=googlemaps&logoColor=white" alt="Google Maps">
-  <img src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black" alt="Laravel Mix / Webpack">
-  <img src="https://img.shields.io/badge/PHPUnit-366488?style=for-the-badge&logo=php&logoColor=white" alt="PHPUnit">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT License">
-  <img src="https://img.shields.io/badge/status-final--year%20project-blue?style=flat-square" alt="Final-year project">
+  <img alt="Laravel 9.14" src="https://img.shields.io/badge/Laravel-9.14-FF2D20?style=flat-square&amp;logo=laravel&amp;logoColor=white">
+  <img alt="PHP 8.0+" src="https://img.shields.io/badge/PHP-8.0%2B-777BB4?style=flat-square&amp;logo=php&amp;logoColor=white">
+  <img alt="MySQL" src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&amp;logo=mysql&amp;logoColor=white">
+  <img alt="JWT" src="https://img.shields.io/badge/JWT-000000?style=flat-square&amp;logo=jsonwebtokens&amp;logoColor=white">
+  <img alt="Bootstrap 5.1" src="https://img.shields.io/badge/Bootstrap-5.1-7952B3?style=flat-square&amp;logo=bootstrap&amp;logoColor=white">
+  <img alt="Chart.js" src="https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&amp;logo=chartdotjs&amp;logoColor=white">
+  <img alt="Google Maps" src="https://img.shields.io/badge/Google%20Maps-4285F4?style=flat-square&amp;logo=googlemaps&amp;logoColor=white">
+  <img alt="Laravel Mix / Webpack" src="https://img.shields.io/badge/Webpack-8DD6F9?style=flat-square&amp;logo=webpack&amp;logoColor=black">
+  <img alt="PHPUnit" src="https://img.shields.io/badge/PHPUnit-366488?style=flat-square&amp;logo=php&amp;logoColor=white">
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-blue?style=flat-square">
+  <img alt="Final-year project" src="https://img.shields.io/badge/Status-final--year%20project-blue?style=flat-square">
 </p>
 
 ---
